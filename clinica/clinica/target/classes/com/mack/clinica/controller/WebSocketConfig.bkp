@@ -1,0 +1,24 @@
+package com.mack.clinica.controller;
+import javax.websocket.server.ServerApplicationConfig;
+import javax.websocket.server.ServerEndpointConfig;
+import java.util.HashSet;
+import java.util.Set;
+
+public class WebSocketConfig implements ServerApplicationConfig {
+    @Override
+    public Set<ServerEndpointConfig> getEndpointConfigs(Set<Class<? extends Object>> scanned) {
+        Set<ServerEndpointConfig> result = new HashSet<>();
+        for (Class<?> endpoint : scanned) {
+            if (endpoint.getName().equals("com.mack.clinica.controller.ChatWebSocket")) {
+                result.add(ServerEndpointConfig.Builder.create(endpoint, "/chatws").build());
+            }
+        }
+        return result;
+    }
+
+    @Override
+    public Set<Class<?>> getAnnotatedEndpointClasses(Set<Class<?>> scanned) {
+        return new HashSet<>(); // Se quiser ignorar @ServerEndpoint
+    }
+}
+

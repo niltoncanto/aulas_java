@@ -1,0 +1,3 @@
+[2025-04-24 22:43:48] [INFO] Registrando no arquivo de log.
+[2025-04-24 22:43:48] [WARNING] Aviso importante no log de arquivo.
+[2025-04-24 22:43:48] [ERROR] Erro fatal registrado no arquivo!
