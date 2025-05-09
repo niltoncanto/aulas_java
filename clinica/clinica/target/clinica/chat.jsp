@@ -4,41 +4,7 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Chat</title>
-    <style>
-        /* Área de exibição de mensagens */
-        #chatArea {
-            border: 1px solid #ccc;
-            height: 300px;
-            overflow-y: auto;
-            padding: 10px;
-            background: #f9f9f9;
-        }
-        /* Lista de mensagens sem marcadores */
-        #messages {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        /* Formulário de envio */
-        #chatForm {
-            margin-top: 10px;
-            display: flex;
-        }
-        #msgInput {
-            flex: 1;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px 0 0 4px;
-        }
-        #chatForm button {
-            padding: 8px 12px;
-            border: none;
-            background-color: #007bff;
-            color: #fff;
-            border-radius: 0 4px 4px 0;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"/>
 </head>
 <body>
     <div id="chatArea">
@@ -46,7 +12,7 @@
     </div>
     <form id="chatForm">
         <input type="text" id="msgInput" placeholder="Digite sua mensagem..." autocomplete="off"/>
-        <button type="submit">Enviar</button>
+        <button type="submit" id="buttonchat">Enviar</button>
     </form>
 
     <script>
