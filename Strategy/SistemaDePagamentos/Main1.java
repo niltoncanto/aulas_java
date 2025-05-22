@@ -50,7 +50,7 @@ class LojaOnline {
 }
 
 // Classe principal para simular o sistema
-public class Main1 {
+public class Main {
     public static void main(String[] args) {
         // Cliente escolhe pagar com cartão de crédito
         LojaOnline loja1 = new LojaOnline(new CartaoCreditoStrategy());

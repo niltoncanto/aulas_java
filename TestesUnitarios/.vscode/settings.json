@@ -1,0 +1,6 @@
+{
+    "java.format.settings.url": ".vscode/java-formatter.xml",
+    "dotnetAcquisitionExtension.proxyUrl": "https://nilton:Koupati@bu@10.0.16.21:8080",
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "java.debug.settings.onBuildFailureProceed": true
+}

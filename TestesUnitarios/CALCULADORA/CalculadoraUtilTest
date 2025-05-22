@@ -1,0 +1,56 @@
+package CALCULADORA;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import java.io.IOException;
+
+public class CalculadoraUtilTest {
+
+    @Test
+    void testSomar() {
+        CalculadoraUtil calc = new CalculadoraUtil();
+        assertEquals(5, calc.somar(2, 3));
+    }
+
+    @Test
+    public void testSubtrair() {
+        CalculadoraUtil calc = new CalculadoraUtil();
+        assertEquals(2, calc.subtrair(5, 3));
+    }
+
+    @Test
+    public void testMultiplicar() {
+        CalculadoraUtil calc = new CalculadoraUtil();
+        assertEquals(6, calc.multiplicar(2, 3));
+    }
+
+    @Test
+    public void testDividir() {
+        CalculadoraUtil calc = new CalculadoraUtil();
+        assertEquals(2, calc.dividir(6, 3));
+    }
+
+    @Test
+    public void testEhPar() {
+        CalculadoraUtil calc = new CalculadoraUtil();
+        assertTrue(calc.ehPar(4));
+        assertFalse(calc.ehPar(5));
+    }
+
+    @Test
+    public void testFatorial() {
+        CalculadoraUtil calc = new CalculadoraUtil();
+        assertEquals(120, calc.fatorial(5));
+    }
+    @Test
+    public void testMaior() {
+        CalculadoraUtil calc = new CalculadoraUtil();
+        assertEquals(10, calc.maior(10, 5));
+    }
+
+    @Test
+    public void ehPrimo() {
+        CalculadoraUtil calc = new CalculadoraUtil();
+        assertTrue(calc.ehPrimo(7));
+        assertFalse(calc.ehPrimo(4));
+    }
+}

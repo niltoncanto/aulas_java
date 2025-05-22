@@ -57,7 +57,7 @@ class Leilao {
 }
 
 // Classe principal que simula o sistema
-public class Main1 {
+public class Main {
     public static void main(String[] args) {
         // Criando um leilão
         Leilao leilao = new Leilao();

@@ -45,6 +45,11 @@ class ProdutoFisico implements Produto {
     }
 
     @Override
+    public String toString() {
+        return getDescricao();
+    }
+
+    @Override
     public String getChave() {
         return nome + "-" + categoria;
     }
@@ -74,6 +79,11 @@ class ProdutoDigital implements Produto {
     public String getDescricao() {
         return nome + " - " + categoria + " | R$ " + preco + " | Código: " + codigo +
                " | Tamanho: " + tamanhoArquivoMB + "MB | Formato: " + formato;
+    }
+
+    @Override
+    public String toString() {
+        return getDescricao();
     }
 
     @Override
