@@ -1,32 +1,41 @@
-// Classe que representa um Livro na biblioteca
+import java.util.ArrayList;
+import java.util.List;
+
 class Livro {
-    private String titulo;
+    //atributos
     private String autor;
+    private String titulo;
     private String isbn;
-    private boolean emprestado; // true = emprestado, false = disponível
-    // Construtor
-    public Livro(String titulo, String autor, String isbn) {
-        this.titulo = titulo;
+    private boolean emprestado;
+
+    //construtor da classe
+    public Livro(String autor, String titulo, String isbn){
         this.autor = autor;
-        this.isbn = isbn;
-        this.emprestado = false; // Livro começa disponível
+        this.titulo = titulo;
+        this. isbn = isbn;
+        this.emprestado = false; //livro é criado disponível
     }
-    // Método para emprestar o livro
-    public boolean emprestar() {
-        if (!emprestado) {
+
+    //método para emprestar
+    public boolean emprestar(){
+        if(!emprestado){
             emprestado = true;
-            return true; // Empréstimo bem-sucedido
-        }
-        return false; // Livro já está emprestado
+            return true; //emprestimo realizado
+        }else{
+            return false; // livro não disponível
+        }    
     }
+
     // Método para devolver o livro
     public void devolver() {
         emprestado = false;
     }
+
     // Método para verificar o status do livro
     public boolean isEmprestado() {
         return emprestado;
     }
+
     // Método para exibir informações do livro
     public String toString() {
         return titulo + " - " + autor + " (ISBN: " + isbn + ") | " + (emprestado ? "Emprestado" : "Disponível");
@@ -44,6 +53,7 @@ class Usuario {
         this.id = id;
         this.livrosEmprestados = new ArrayList<>();
     }
+    /* *************************************************** */
     // Método para emprestar um livro ao usuário
     public boolean emprestarLivro(Livro livro) {
         if (livro.emprestar()) { // Verifica se o livro está disponível
@@ -79,8 +89,10 @@ class Usuario {
         }
     }
 }
+
 // Classe principal para testar o sistema
-public class Biblioteca {
+public class AppBiblioteca {
+    
     public static void main(String[] args) {
         // Criando alguns livros
         Livro livro1 = new Livro("1984", "George Orwell", "978-0451524935");
@@ -104,4 +116,6 @@ public class Biblioteca {
         usuario2.listarLivrosEmprestados();
     }
 }
+    /* *************************************************** */
+
 
