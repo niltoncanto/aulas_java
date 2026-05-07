@@ -1,12 +1,12 @@
 // Classe Animal
-public class Animal {
+public class AnimalEx1 {
     // Atributos
     private String nome;   // Nome do animal (ex: Rex)
     private String tipo;   // Tipo do animal (ex: Mamífero, Réptil)
     private String som;    // Som característico (ex: Latido, Miado)
 
     // Construtor
-    public Animal(String nome, String tipo, String som) {
+    public AnimalEx1(String nome, String tipo, String som) {
         this.nome = nome;
         this.tipo = tipo;
         this.som = som;

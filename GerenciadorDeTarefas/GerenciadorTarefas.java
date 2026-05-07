@@ -1,11 +1,12 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
  * Classe principal que gerencia as tarefas
  */
 public class GerenciadorTarefas {
-    private static ArrayList<Tarefa> tarefas = new ArrayList<>(); // Lista de tarefas
+    private static List<Tarefa> tarefas = new ArrayList<>(); // Lista de tarefas
     private static int proximoId = 1; // ID único para cada tarefa
     private static Scanner scanner = new Scanner(System.in);
 
