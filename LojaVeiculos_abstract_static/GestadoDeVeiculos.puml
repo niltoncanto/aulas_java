@@ -1,0 +1,94 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam shadowing true
+skinparam roundcorner 18
+skinparam classAttributeIconSize 0
+skinparam dpi 180
+
+skinparam class {
+    BackgroundColor #F8FBFF
+    BorderColor #2F5D8A
+    ArrowColor #2F5D8A
+    FontColor #1F2937
+    FontName Arial
+}
+
+skinparam stereotype {
+    CBackgroundColor #E8F1FB
+    CBorderColor #2F5D8A
+    FontColor #1F2937
+}
+
+skinparam note {
+    BackgroundColor #FFF8DC
+    BorderColor #C9A227
+    FontColor #4B5563
+}
+
+title <size:18><b>Diagrama de Classes - Sistema de Concessionária</b></size>
+
+abstract class Veiculo {
+    # marca : String
+    # modelo : String
+    # ano : Integer
+    # preco : Double
+    --
+    # {static} totalVeiculos : Integer
+    --
+    + Veiculo(marca : String, modelo : String, ano : Integer, preco : Double)
+    + {static} getTotalVeiculos() : Integer
+    + getDescricao() : String
+    + toString() : String
+}
+
+class VeiculoNovo <<subclasse>> {
+    - garantiaAnos : Integer
+    --
+    + VeiculoNovo(marca : String, modelo : String, ano : Integer, preco : Double, garantiaAnos : Integer)
+    + getDescricao() : String
+}
+
+class VeiculoUsado <<subclasse>> {
+    - quilometragem : Integer
+    - unicoDono : boolean
+    --
+    + VeiculoUsado(marca : String, modelo : String, ano : Integer, preco : Double, quilometragem : Integer, unicoDono : boolean)
+    + getDescricao() : String
+}
+
+class Concessionaria <<controle>> {
+    - veiculos : Map<String, Veiculo>
+    - vendas : ArrayList<Veiculo>
+    --
+    + Concessionaria()
+    + cadastrarVeiculo(veiculo : Veiculo) : void
+    + registrarVenda(chave : String) : void
+    + exibirEstoque() : void
+    + exibirVendas() : void
+}
+
+class SistemaConcessionaria <<main>> {
+    + main(args : String[]) : void
+}
+
+Veiculo <|-- VeiculoNovo
+Veiculo <|-- VeiculoUsado
+
+Concessionaria *-- "0..*" Veiculo : estoque
+Concessionaria o-- "0..*" Veiculo : vendas
+
+SistemaConcessionaria ..> Concessionaria : cria / utiliza
+SistemaConcessionaria ..> VeiculoNovo : instancia
+SistemaConcessionaria ..> VeiculoUsado : instancia
+
+note right of Veiculo
+Classe abstrata base do sistema.
+Reúne atributos comuns e define
+o método abstrato getDescricao().
+end note
+
+note bottom of Concessionaria
+Responsável pelo gerenciamento
+do estoque e do histórico de vendas.
+end note
+@enduml

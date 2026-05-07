@@ -91,12 +91,28 @@ class Jokenpo {
 
     // Método auxiliar para traduzir a escolha numérica para string
     private String traduzirEscolha(int escolha) {
-        return switch (escolha) {
+        /*return switch (escolha) {
             case 1 -> "Pedra";
             case 2 -> "Papel";
             case 3 -> "Tesoura";
             default -> "Desconhecido";
-        };
+        };*/
+        String nome;
+        switch (escolha) {
+            case 1:
+                nome = "Pedra";
+                break;
+            case 2:
+                nome = "Papel";
+                break;
+            case 3:
+                nome = "Tesoura";
+                break;
+            default:
+                nome = "Desconhecido";
+                break;
+        }
+        return nome;
     }
 
     // Método principal do jogo

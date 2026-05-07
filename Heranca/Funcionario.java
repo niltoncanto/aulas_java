@@ -114,6 +114,3 @@ public class Funcionario {
         tecnico.exibirInformacoes();
     }
 }
- {
-    
-}
